@@ -1,0 +1,48 @@
+var Configuration = require('../lib/configuration').Configuration,
+  Runner = require('../lib/runner').Runner;
+
+// Set up a set of configurations we are going to use
+var configurations = Configuration
+  .add("empty", function() {
+    this.start = function(callback) {
+      callback();
+    }
+
+    this.setup = function(callback) {
+      callback();
+    }
+
+    this.teardown = function(callback) {
+      callback();      
+    };
+
+    this.stop = function(callback) {
+      callback();
+    };
+  });
+
+// Configure a Run of tests
+var runner = Runner
+  .configurations(configurations)
+  .add("integra", [
+    '/test/instrumentor_tests'
+  ])
+  // Generate coverage data
+  .cover()
+  // Runs all the suites
+  .run("empty");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
