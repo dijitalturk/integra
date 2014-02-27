@@ -1,5 +1,6 @@
-var Configuration = require('../lib/configuration').Configuration,
-  Runner = require('../lib/runner').Runner;
+var Configuration = require('../lib/configuration').Configuration
+  , Runner = require('../lib/runner').Runner
+  , Cover = require('../lib/coverage/cover').Cover;
 
 // Set up a set of configurations we are going to use
 var configurations = Configuration
@@ -28,7 +29,10 @@ var runner = Runner
     '/test/instrumentor_tests'
   ])
   // Generate coverage data
-  .cover()
+  // .cover()
+  // .rcover()
+  .plugin(new Cover())
+  // .plugin(new RCover())
   // Runs all the suites
   .run("empty");
 

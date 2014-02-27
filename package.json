@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "esprima": "1.0.4",
-    "escodegen": "1.0.1",
-    "underscore": "1.5.2"
+    "esprima": "1.0.x",
+    "escodegen": "1.1.x",
+    "handlebars": "2.0.0-alpha.1"
   },
   "repository": "",
   "author": "",

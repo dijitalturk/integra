@@ -1,11 +1,9 @@
-var Cursor = function(items) {
-	this.next = function() {
-		return items.shift();
-	}	
-
+var Cursor = function(items) {	
+	items = items || [];
+ 
 	this.length = function() {
 		return items.length;
 	}
 }
-
-exports.Cursor = Cursor;
+ 
+ exports.Cursor = Cursor;
