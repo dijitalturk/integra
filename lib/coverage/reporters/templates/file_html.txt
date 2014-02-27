@@ -194,6 +194,9 @@
 <body>
 <div class="header {{reportClass}}">
     <h1>Code coverage report for <span class="entity">{{entity}}</span></h1>
+    <h2>
+      {{summary}}
+    </h2>
 </div>
 <div class="body">
   <pre>
