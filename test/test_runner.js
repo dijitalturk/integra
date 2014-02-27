@@ -1,6 +1,6 @@
 var Configuration = require('../lib/configuration').Configuration
   , Runner = require('../lib/runner').Runner
-  , Cover = require('../lib/coverage/cover').Cover;
+  , Cover = require('../lib/coverage/cover');
 
 // Set up a set of configurations we are going to use
 var configurations = Configuration
