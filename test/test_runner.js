@@ -31,7 +31,7 @@ var runner = Runner
   // Generate coverage data
   // .cover()
   // .rcover()
-  .plugin(new Cover())
+  .plugin(new Cover({includes: []}))
   // .plugin(new RCover())
   // Runs all the suites
   .run("empty");
