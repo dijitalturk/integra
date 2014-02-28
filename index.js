@@ -1,9 +1,11 @@
 var Configuration = require('./lib/configuration').Configuration
   , Runner = require('./lib/runner').Runner
   , Filters = require('./lib/filter').Filters
-  , Cover = require('./lib/coverage/cover');
+  , Cover = require('./lib/coverage/cover')
+  , RCover = require('./lib/coverage/rcover');
 
 exports.Configuration = Configuration;
 exports.Runner = Runner;
 exports.Filters = Filters;
 exports.Cover = Cover;
+exports.RCover = RCover;

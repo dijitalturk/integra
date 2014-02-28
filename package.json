@@ -10,7 +10,8 @@
     "esprima": "1.0.x",
     "escodegen": "1.1.x",
     "handlebars": "2.0.0-alpha.1",
-    "rimraf": "2.2.6"
+    "rimraf": "2.2.6",
+    "mkdirp": "latest"
   },
   "repository": "",
   "author": "",
