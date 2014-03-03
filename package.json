@@ -1,6 +1,6 @@
 {
   "name": "integra",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "An integration testing framework",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "rimraf": "2.2.6",
     "mkdirp": "latest"
   },
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/christkv/integra",
+  "author": "Christian Amor Kvalheim",
   "license": "Apache 2.0"
 }

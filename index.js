@@ -1,11 +1,7 @@
-var Configuration = require('./lib/configuration').Configuration
-  , Runner = require('./lib/runner').Runner
-  , Filters = require('./lib/filter').Filters
-  , Cover = require('./lib/coverage/cover')
-  , RCover = require('./lib/coverage/rcover');
+var Runner = require('./lib/runner')
+  , Cover = require('./lib/plugins/cover')
+  , FileFilter = require('./lib/filters/file_filter');
 
-exports.Configuration = Configuration;
 exports.Runner = Runner;
-exports.Filters = Filters;
 exports.Cover = Cover;
-exports.RCover = RCover;
+exports.FileFilter = FileFilter;

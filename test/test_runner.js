@@ -1,52 +1,68 @@
-var Configuration = require('../lib/configuration').Configuration
-  , Runner = require('../lib/runner').Runner
-  , Cover = require('../lib/coverage/cover');
+var Runner = require('../lib/runner')
+	, Cover = require('../lib/plugins/cover')
+	, FileFilter = require('../lib/filters/file_filter');
 
-// Set up a set of configurations we are going to use
-var configurations = Configuration
-  .add("empty", function() {
-    this.start = function(callback) {
-      callback();
-    }
+var MyConfiguration = function(context) {
+	var http = require('http');
+	// Contains the global configuration context
+	// where you can store shared values across
+	// all the contexts
+	if(context.startPort == null)
+		context.startPort = 30000;
+	// Contains the server
+	var server = null;
 
-    this.setup = function(callback) {
-      callback();
-    }
+	return {		
+		start: function(callback) {
+			// Update start Port before starting server
+			var serverStartPort = context.startPort;
+			context.startPort = context.startPort + 10;
+			// Start http server
+			server = http.createServer(function (req, res) {
+			  res.writeHead(200, {'Content-Type': 'text/plain'});
+			  res.end("Hello world from " + serverStartPort);
+			}).listen(serverStartPort, callback);
+		},
 
-    this.teardown = function(callback) {
-      callback();      
-    };
+		shutdown: function(callback) {
+			server.close(callback);
+		},
 
-    this.stop = function(callback) {
-      callback();
-    };
-  });
+		setup: function(callback) {
+			callback();
+		},
 
-// Configure a Run of tests
-var runner = Runner
-  .configurations(configurations)
-  .add("integra", [
-    '/test/instrumentor_tests'
-  ])
-  // Generate coverage data
-  // .cover()
-  // .rcover()
-  .plugin(new Cover({includes: []}))
-  // .plugin(new RCover())
-  // Runs all the suites
-  .run("empty");
+		teardown: function(callback) {
+			callback();
+		}
+	}
+}
 
+// Set up the runner
+var runner = new Runner({
+		logLevel:'error'
+	, runners: 2
+	, failFast: false
+});
 
+// Add some tests to run
+runner.add("/test/tests/test1.js");
+runner.add("/test/tests/test2.js");
+// Add a filter
+runner.filter(new FileFilter("test1.js"))
 
+// Add the code coverage plugin
+runner.plugin(new Cover());
+runner.on('exit', function(errors, results) {
+	// console.log("========================================================")
+	// console.dir(errors)
+	// console.dir(results)
+	// // Go over all the results
+	// results.forEach(function(result) {
+	// 	console.dir(result.results)
+	// });
+	process.exit(0)
+});
 
-
-
-
-
-
-
-
-
-
-
-  
+// Run the configuration
+runner.run(MyConfiguration);
