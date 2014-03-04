@@ -40,7 +40,7 @@ var MyConfiguration = function(context) {
 
 // Set up the runner
 var runner = new Runner({
-		logLevel:'error'
+		logLevel:'info'
 	, runners: 2
 	, failFast: false
 });
