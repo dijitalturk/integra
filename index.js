@@ -1,5 +1,5 @@
 var Runner = require('./lib/runner')
-  , Cover = require('./lib/plugins/cover')
+  , Cover = require('./lib/plugins/cover/cover')
   , FileFilter = require('./lib/filters/file_filter');
 
 exports.Runner = Runner;
