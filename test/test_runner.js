@@ -49,7 +49,7 @@ var runner = new Runner({
 runner.add("/test/tests/test1.js");
 runner.add("/test/tests/test2.js");
 // Add a filter
-runner.filter(new FileFilter("test1.js"))
+runner.plugin(new FileFilter("test1.js"))
 
 // Add the code coverage plugin
 runner.plugin(new Cover());
