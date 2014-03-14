@@ -32,24 +32,40 @@
           font-size: 90%;
           text-align: center;
       }
-      h1, h2, h3 {
-          font-weight: normal;
+      h3 {
+          font-weight: bold;
+          font-size: 14pt;
+          background: lightgrey;
       }
       h1 {
+          font-weight: normal;
           font-size: 12pt;
       }
       h2 {
+          font-weight: normal;
           font-size: 10pt;
       }
       pre {
           font-family: Consolas, Menlo, Monaco, monospace;
           margin: 0;
           padding: 0;
-          line-height: 14px;
-          font-size: 14px;
+          line-height: 12px;
+          font-size: 12px;
           -moz-tab-size: 2;
           -o-tab-size:  2;
           tab-size: 2;
+      }
+
+      textarea {
+          font-family: Consolas, Menlo, Monaco, monospace;
+          margin: 0;
+          padding: 0;
+          border: none;
+          line-height: 12px;
+          font-size: 12px;
+          -moz-tab-size: 2;
+          -o-tab-size:  2;
+          tab-size: 2;        
       }
 
       div.path { font-size: 110%; }
@@ -212,3 +228,4 @@
 <script type="text/javascript">
   {{js}}
 </script>
+<!--<script type="text/javascript" src="file:///Users/ck/coding/projects/integra/lib/plugins/rcover/rcover_reporters/js/functions_comparative.js"></script>-->
