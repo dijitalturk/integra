@@ -228,4 +228,4 @@
 <script type="text/javascript">
   {{js}}
 </script>
-<!--<script type="text/javascript" src="file:///Users/ck/coding/projects/integra/lib/plugins/rcover/rcover_reporters/js/functions_comparative.js"></script>-->
+<script type="text/javascript" src="file:///Users/ck/coding/projects/integra/lib/plugins/rcover/rcover_reporters/js/functions_explorer.js"></script>
