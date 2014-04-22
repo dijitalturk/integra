@@ -1,6 +1,6 @@
 {
   "name": "integra",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An integration testing framework",
   "main": "index.js",
   "scripts": {
